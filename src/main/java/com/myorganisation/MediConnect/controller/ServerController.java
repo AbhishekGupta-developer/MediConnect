@@ -29,6 +29,7 @@ public class ServerController {
         Map<String, String> server = new LinkedHashMap<>();
 
         server.put("serverName", applicationName);
+        server.put("serverVersion", "1.0.0");
         server.put("serverStatus", "live");
         server.put("serverStartDate", new SimpleDateFormat("dd-MM-yyyy").format(startDate).toString());
         server.put("serverStartTime", new SimpleDateFormat("HH:mm:ss").format(startDate).toString());
