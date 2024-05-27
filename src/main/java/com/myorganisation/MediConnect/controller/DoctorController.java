@@ -22,7 +22,7 @@ public class DoctorController {
         return new ResponseEntity<>(doctorService.addDoctor(doctorRequest), HttpStatusCode.valueOf(201));
     }
 
-    @Operation(summary = "Delete a doctor", description = "Deletes a doctor by ID")
+    @Operation(summary = "Delete the doctor", description = "Deletes the doctor by ID")
     @DeleteMapping("/{doctorId}")
     public ResponseEntity<?> removeDoctor(@PathVariable Long doctorId) {
         doctorService.removeDoctor(doctorId);
