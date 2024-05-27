@@ -29,7 +29,7 @@ public class DoctorController {
         return new ResponseEntity<>(HttpStatusCode.valueOf(204));
     }
 
-    @Operation(summary = "Get a list of suggested doctors", description = "Provides list of doctors based on your city and symptom")
+    @Operation(summary = "Get the list of suggested doctors", description = "Provides the list of doctors based on your city and symptom")
     @GetMapping("/suggest")
     public ResponseEntity<?> suggestDoctors(@RequestParam(name = "patientId") Long patientId) {
         return new ResponseEntity<>(doctorService.suggestDoctors(patientId), HttpStatusCode.valueOf(200));
