@@ -40,16 +40,17 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public void removeDoctor(Long doctorId) {
-        Doctor doctor = doctorRepository.findById(doctorId).orElse(null);
-        if(doctor == null) {
-            throw new RuntimeException("Doctor not found! Please recheck the Id.");
-        }
+        getDoctor(doctorId);
         doctorRepository.deleteById(doctorId);
     }
 
     @Override
     public Doctor getDoctor(Long doctorId) {
-        return doctorRepository.findById(doctorId).orElse(null);
+        Doctor doctor = doctorRepository.findById(doctorId).orElse(null);
+        if(doctor == null) {
+            throw new RuntimeException("Doctor not found! Please recheck the Id.");
+        }
+        return doctor;
     }
 
     @Override
