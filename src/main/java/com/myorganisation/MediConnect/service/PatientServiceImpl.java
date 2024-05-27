@@ -32,16 +32,17 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public void removePatient(Long patientId) {
-        Patient patient = patientRepository.findById(patientId).orElse(null);
-        if(patient == null) {
-            throw new RuntimeException("Patient not found!  Please recheck the Id.");
-        }
+        getPatient(patientId);
         patientRepository.deleteById(patientId);
     }
 
     @Override
     public Patient getPatient(Long patientId) {
-        return patientRepository.findById(patientId).orElse(null);
+        Patient patient = patientRepository.findById(patientId).orElse(null);
+        if(patient == null) {
+            throw new RuntimeException("Patient not found!  Please recheck the Id.");
+        }
+        return patient;
     }
 
     @Override
