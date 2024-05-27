@@ -63,10 +63,6 @@ public class DoctorServiceImpl implements DoctorService {
 
         Patient patient = patientService.getPatient(patientId);
 
-        if(patient == null) {
-            throw new RuntimeException("Patient not found!  Please recheck the Id.");
-        }
-
         City patientCity;
         try {
             patientCity = City.valueOf(patient.getCity().toUpperCase());
