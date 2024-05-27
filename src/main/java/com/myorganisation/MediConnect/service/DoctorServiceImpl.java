@@ -48,6 +48,16 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
+    public Doctor getDoctor(Long doctorId) {
+        return doctorRepository.findById(doctorId).orElse(null);
+    }
+
+    @Override
+    public List<Doctor> getAllDoctors() {
+        return doctorRepository.findAll();
+    }
+
+    @Override
     public List<Doctor> suggestDoctors(Long patientId) {
 
         Patient patient = patientService.getPatient(patientId);
