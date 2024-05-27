@@ -13,7 +13,7 @@ import java.util.List;
 @Service
 public class PatientServiceImpl implements PatientService {
 
-    Logger logger = LoggerFactory.getLogger(DoctorServiceImpl.class);
+    Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
 
     @Autowired
     PatientRepository patientRepository;
