@@ -38,7 +38,7 @@ public class PatientController {
         return new ResponseEntity<>(patientService.getAllPatients(), HttpStatusCode.valueOf(200));
     }
 
-    @Operation(summary = "Delete a patient", description = "Deletes a patient by ID")
+    @Operation(summary = "Delete the patient", description = "Deletes the patient by ID")
     @DeleteMapping("/{patientId}")
     public ResponseEntity<?> removePatient(@PathVariable Long patientId) {
         patientService.removePatient(patientId);
