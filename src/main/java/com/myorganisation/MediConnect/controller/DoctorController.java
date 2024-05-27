@@ -22,6 +22,18 @@ public class DoctorController {
         return new ResponseEntity<>(doctorService.addDoctor(doctorRequest), HttpStatusCode.valueOf(201));
     }
 
+    @Operation(summary = "Get the doctor", description = "Get the doctor by their ID")
+    @GetMapping("/{doctorId}")
+    public ResponseEntity<?> getDoctor(@PathVariable Long doctorId) {
+        return new ResponseEntity<>(doctorService.getDoctor(doctorId), HttpStatusCode.valueOf(200));
+    }
+
+    @Operation(summary = "Get all doctors", description = "Get all doctors")
+    @GetMapping
+    public ResponseEntity<?> getAllDoctors() {
+        return new ResponseEntity<>(doctorService.getAllDoctors(), HttpStatusCode.valueOf(200));
+    }
+
     @Operation(summary = "Delete the doctor", description = "Deletes the doctor by ID")
     @DeleteMapping("/{doctorId}")
     public ResponseEntity<?> removeDoctor(@PathVariable Long doctorId) {
