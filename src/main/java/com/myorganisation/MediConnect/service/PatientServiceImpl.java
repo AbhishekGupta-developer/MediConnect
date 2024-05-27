@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PatientServiceImpl implements PatientService {
 
@@ -40,5 +42,10 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public Patient getPatient(Long patientId) {
         return patientRepository.findById(patientId).orElse(null);
+    }
+
+    @Override
+    public List<Patient> getAllPatients() {
+        return patientRepository.findAll();
     }
 }
